@@ -3,6 +3,7 @@ A computational pipeline for structural and functional interpretation of disease
 ## Description
 COMPASS is a computational framework designed to integrate whole-genome sequencing (WGS) data with experimentally determined and AI-predicted protein structures to systematically link disease-associated coding variants with functional structural regions and therapeutic targets. By combining sequence-based variant selection and structure-based patch scanning, COMPASS identifies disease-relevant substructures (functional hotspots) that accelerate genetics-driven drug discovery.
 ## Workflow Overview
+The framework comprises three modules: (1) a sequence module that maps variants to transcript-specific amino acid sequences and consolidates association signals at the residue level; (2) a structure module that localizes disease-relevant hotspots in the protein; and (3) an annotation module that integrates functional annotations and automated literature mining to support interpretation.
 ![COMPASS_workflow](docs/workflow.png)
 ## Docker Image
 A Docker image for COMPASS, which includes R and all COMPASS-related packages pre-installed, is available on Docker Hub.The docker image can be pulled using
@@ -27,7 +28,7 @@ Rscript coding_variants2amino_acids.R \
 | `--chr`                                 | `6`                                                  | Chromosome number containing the target gene.                                                                                                     |
 | `--gds.path`                            | `ukb.500k.wgs.chr6.pass.annotated.extend.gds`        | Path to the annotated GDS file containing WGS variants for the specified chromosome.                                                              |
 | `--gene_name`                           | `CRIP3`                                              | Name of the target gene for analysis.                                                                                                             |
-| `--protein_sequence_selection_strategy` | `one-step`                                           | Strategy used to select representative amino acid sequences when multiple variants occur at the same position. Options: `one-step`, `stepwise`, `best=subset-selection`. |
+| `--protein_sequence_selection_strategy` | `one-step`                                           | Strategy used to select representative amino acid sequences when multiple variants occur at the same position. Options: `one-step`, `stepwise`, `best-subset-selection`. |
 
 Structure-based patch scanning
 ```
@@ -60,3 +61,4 @@ python patch_scanning.py \
 Yannuo Feng, Yihao Peng, Shijie Fan, Shijia Bian, Jingjing Gong, Chang Lu, Xihao Li, Zilin Li
 
 Contact: luc816@nenu.edu.cn, xihaoli@unc.edu, lizl@nenu.edu.cn
+
