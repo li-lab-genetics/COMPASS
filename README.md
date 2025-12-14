@@ -4,6 +4,7 @@ A computational pipeline for structural and functional interpretation of disease
 COMPASS is a computational framework designed to integrate whole-genome sequencing (WGS) data with experimentally determined and AI-predicted protein structures to systematically link disease-associated coding variants with functional structural regions and therapeutic targets. By combining sequence-based variant selection and structure-based patch scanning, COMPASS identifies disease-relevant substructures (functional hotspots) that accelerate genetics-driven drug discovery.
 ## Workflow Overview
 The framework comprises three modules: (1) a sequence module that maps variants to transcript-specific amino acid sequences and consolidates association signals at the residue level; (2) a structure module that localizes disease-relevant hotspots in the protein; and (3) an annotation module that integrates functional annotations and automated literature mining to support interpretation.
+
 ![COMPASS_workflow](docs/workflow.png)
 ## Docker Image
 A Docker image for COMPASS, which includes R and all COMPASS-related packages pre-installed, is available on Docker Hub.The docker image can be pulled using
