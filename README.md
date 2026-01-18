@@ -21,6 +21,7 @@ Rscript coding_variants2amino_acids.R \
   --chr=6 \
   --gds.path=ukb.500k.wgs.chr6.pass.annotated.extend.gds \
   --gene_name=CRIP3 \
+  --transcript=ENST00000274990 \
   --protein_sequence_selection_strategy=one-step
 ```
 | Parameter                               | Example                                              | Description                                                                                                                                       |
@@ -30,6 +31,7 @@ Rscript coding_variants2amino_acids.R \
 | `--chr`                                 | `6`                                                  | Chromosome number containing the target gene.                                                                                                     |
 | `--gds.path`                            | `ukb.500k.wgs.chr6.pass.annotated.extend.gds`        | Path to the annotated GDS file containing WGS variants for the specified chromosome.                                                              |
 | `--gene_name`                           | `CRIP3`                                              | Name of the target gene for analysis.                                                                                                             |
+| `--transcript`     | `ENST00000333681`                                        | Ensembl transcript ID corresponding to the analyzed gene. The default setting is `standard`, which automatically selects the canonical transcript for analysis.|
 | `--protein_sequence_selection_strategy` | `one-step`                                           | Strategy used to select representative amino acid sequences when multiple variants occur at the same position. Options: `one-step`, `stepwise`, `best-subset-selection`. |
 
 ### COMPASS-Struct
